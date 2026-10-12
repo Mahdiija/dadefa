@@ -1,0 +1,198 @@
+.star-border-control {
+  position: relative;
+  display: inline-flex;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+  padding-block: 1.5px;
+  border-radius: 9999px;
+  isolation: isolate;
+  vertical-align: middle;
+  appearance: none;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  text-align: center;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.star-border-control[data-variant="primary"] {
+  --landing-button-background: #ffffff;
+  --landing-button-foreground: #000000;
+  --landing-button-border: #3565af;
+}
+
+html.light .star-border-control[data-variant="primary"] {
+  --landing-button-background: #000000;
+  --landing-button-foreground: #ffffff;
+}
+
+.star-border-control[data-variant="glass"] {
+  --landing-button-background: #ffffff;
+  --landing-button-foreground: #000000;
+  --landing-button-border: #3565af;
+}
+
+html.light .star-border-control[data-variant="glass"] {
+  --landing-button-background: #000000;
+  --landing-button-foreground: #ffffff;
+}
+
+.star-border-control[data-variant="outline"] {
+  overflow: visible;
+  padding-block: 0;
+  border-radius: 0;
+  --landing-button-background: transparent;
+  --landing-button-foreground: var(--text-main);
+  --landing-button-border: transparent;
+}
+
+.star-border-control[data-variant="outline"] .star-border-control__light {
+  display: none;
+}
+
+.star-border-control[data-variant="outline"] > .star-border-control__inner {
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-main);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  backdrop-filter: none;
+}
+
+.star-border-control[data-variant="outline"] > .star-border-control__inner::before {
+  display: none;
+}
+
+.star-border-control {
+  --landing-button-gradient: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--landing-button-border) 48%, transparent),
+    var(--landing-button-border),
+    color-mix(in srgb, var(--landing-button-border) 70%, transparent)
+  );
+}
+
+.star-border-control__light {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  width: 300%;
+  height: 50%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--star-border-color, var(--landing-button-border)) 0%,
+    transparent 10%
+  );
+  filter: blur(2px);
+  opacity: 0.76;
+  pointer-events: none;
+}
+
+.star-border-control__light--top {
+  top: -12px;
+  left: -250%;
+  animation: star-movement-top 6s linear infinite alternate;
+}
+
+.star-border-control__light--bottom {
+  right: -250%;
+  bottom: -12px;
+  animation: star-movement-bottom 6s linear infinite alternate;
+}
+
+:where(.star-border-control__inner) {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+        var(--landing-button-background),
+        var(--landing-button-background)
+      )
+      padding-box,
+    var(--landing-button-gradient) border-box;
+  color: var(--landing-button-foreground);
+  backdrop-filter: blur(12px);
+  white-space: nowrap;
+}
+
+.star-border-control__inner::before {
+  position: absolute;
+  z-index: 0;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--landing-button-gradient);
+  box-shadow: inset 0 0 10px
+    color-mix(in srgb, var(--landing-button-border) 38%, transparent);
+  content: "";
+  filter: blur(3px);
+  opacity: 0.7;
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+:is(
+    .star-border-control.w-full,
+    .star-border-control.grow,
+    .star-border-control.flex-1
+  )
+  > .star-border-control__inner {
+  width: 100%;
+}
+
+.star-border-control:focus-visible .star-border-control__inner {
+  outline: 2px solid var(--color-brand-blue);
+  outline-offset: -3px;
+}
+
+@keyframes star-movement-top {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes star-movement-bottom {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-border-control__light--top,
+  .star-border-control__light--bottom {
+    left: -100%;
+    right: auto;
+    animation: none;
+    opacity: 0.55;
+  }
+}

@@ -1,0 +1,141 @@
+﻿/* Persian typeface from the brand guide: Vazir. Alibaba remains the first
+   family in the brand token when its full font files are supplied. */
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/vazir-font-v16.1.0/Vazir.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/vazir-font-v16.1.0/Vazir-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/vazir-font-v16.1.0/Vazir-Medium.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/vazir-font-v16.1.0/Vazir-Bold.woff2") format("woff2");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================================
+   1. فونت اصلی بدنه فارسی برند داده‌فا: Alibaba
+   ======================================================== */
+@font-face {
+  font-family: "Alibaba";
+  src: url("/fonts/Fonts/Alibaba-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alibaba";
+  src: url("/fonts/Fonts/Alibaba-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alibaba";
+  src: url("/fonts/Fonts/Alibaba-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alibaba";
+  src: url("/fonts/Fonts/Alibaba-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================================
+   2. فونت اختصاصی لاتین هویت بصری داده‌فا: Qurova
+   ======================================================== */
+@font-face {
+  font-family: "Qurova";
+  src: url("/fonts/Fonts/QurovaDEMO-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qurova";
+  src: url("/fonts/Fonts/QurovaDEMO-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qurova";
+  src: url("/fonts/Fonts/QurovaDEMO-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Qurova";
+  src: url("/fonts/Fonts/QurovaDEMO-SemiBold.otf") format("opentype");
+  font-weight: 600 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================================
+   3. فونت مکمل انگلیسی: Open Sans
+   ======================================================== */
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/Fonts/OpenSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/Fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========================================================
+   4. فونت‌های دکوراتیو/هدلاین انگلیسی (کتابچه برند): Momcake
+   ======================================================== */
+@font-face {
+  font-family: "Momcake";
+  src: url("/fonts/Fonts/MomcakeThin-9Y6aZ.otf") format("opentype");
+  font-weight: 100 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Momcake";
+  src: url("/fonts/Fonts/MomcakeBold-WyonA.otf") format("opentype");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}

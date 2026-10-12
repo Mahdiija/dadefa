@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>داده‌فا — هوشمندی، یک تخصصه.</title>
+
+    <meta
+      name="description"
+      content="داده‌فا یک هلدینگ نرم‌افزاری با محصولات مستقل برای مدیریت سازمان، عملیات خرده‌فروشی، اتوماسیون سازمانی و حسابداری شخصی است." />
+    <meta
+      name="keywords"
+      content="داده‌فا، مستر، فرمول، مکعب، حساب‌کتاب، نرم‌افزار سازمانی، عملیات خرده‌فروشی، اتوماسیون" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="داده‌فا — هوشمندی، یک تخصصه." />
+    <meta
+      property="og:description"
+      content="داده‌فا یک هلدینگ نرم‌افزاری با محصولات مستقل برای مدیریت سازمان، خرده‌فروشی، اتوماسیون و حسابداری شخصی است." />
+    <meta property="og:image" content="/landing/logo/landing-logo.webp" />
+    <meta property="og:url" content="https://dadehfa.com" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="داده‌فا — هوشمندی، یک تخصصه." />
+    <meta
+      name="twitter:description"
+      content="داده‌فا یک هلدینگ نرم‌افزاری با محصولات مستقل برای مدیریت سازمان، خرده‌فروشی، اتوماسیون و حسابداری شخصی است." />
+    <meta name="twitter:image" content="/landing/logo/landing-logo.webp" />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("dadefa-locale");
+          var locale = "fa";
+          if (saved) {
+            var parsed = JSON.parse(saved);
+            if (parsed && parsed.state && parsed.state.locale) {
+              locale = parsed.state.locale;
+            }
+          }
+          var dir = locale === "fa" ? "rtl" : "ltr";
+          document.documentElement.setAttribute("lang", locale);
+          document.documentElement.setAttribute("dir", dir);
+        } catch (e) {
+          document.documentElement.setAttribute("lang", "fa");
+          document.documentElement.setAttribute("dir", "rtl");
+        }
+      })();
+    </script>
+    <script>
+      (function () {
+        try {
+          const raw = localStorage.getItem("dadefa-theme-storage");
+          let theme = null;
+          if (raw) {
+            theme = JSON.parse(raw)?.state?.theme;
+          }
+          if (theme !== "light" && theme !== "dark") {
+            theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          }
+          const root = document.documentElement;
+          root.classList.remove("light", "dark");
+          root.classList.add(theme);
+          root.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body
+    class="bg-background text-foreground antialiased selection:bg-primary/20">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

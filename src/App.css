@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* ========================================================
+   متغیرهای پایه‌ای تم و تایپوگرافی دو زبانه
+   ======================================================== */
+:root {
+  /* نگاشت پیش‌فرض فونت‌ها (حالت فارسی / RTL) */
+  --font-body: "Alibaba", system-ui, -apple-system, sans-serif;
+  --font-heading: "Vazir", system-ui, -apple-system, sans-serif;
+  --font-latin: "Qurova", system-ui, -apple-system, sans-serif;
+
+  --line-height-current: 1.8;
+  --letter-spacing-current: -0.015em;
+
+  /* متغیرهای رنگ هدر و المان‌های تعاملی تم تاریک (Dark-First) */
+  --header-brand-c1: rgba(53, 101, 175, 0.24);
+  --header-brand-c2: rgba(232, 229, 218, 0.035);
+  --header-brand-border: rgba(232, 229, 218, 0.18);
+  --header-brand-shadow: 0 10px 28px rgba(35, 31, 32, 0.2);
+  --header-brand-fill: #ffffff;
+  --header-brand-text: #e8e5da;
+  --header-bg: rgba(14, 18, 36, 0.76);
+  --header-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  --particle-stroke: rgba(232, 229, 218, 0.18);
+  --shadow-card-mode: 0 20px 45px -15px rgba(0, 0, 0, 0.6);
+}
+
+/* سوئیچ خودکار تایپوگرافی هنگام انتخاب زبان انگلیسی */
+html[lang="en"],
+[dir="ltr"] {
+  --font-body: "Qurova", system-ui, -apple-system, sans-serif;
+  --font-heading: "Qurova", system-ui, -apple-system, sans-serif;
+  --line-height-current: 1.6;
+  --letter-spacing-current: -0.005em;
+}
+
+/* حالت روشن (Light Theme) */
+html.light {
+  --header-brand-c1: rgba(3, 83, 164, 0.12);
+  --header-brand-c2: rgba(255, 255, 255, 0.8);
+  --header-brand-border: rgba(35, 31, 32, 0.12);
+  --header-brand-shadow: 0 6px 20px rgba(35, 31, 32, 0.06);
+  --header-brand-fill: #0353a4;
+  --header-brand-text: #1d1b1c;
+  --header-bg: rgba(245, 244, 239, 0.85);
+  --header-shadow: 0 8px 24px -4px rgba(35, 31, 32, 0.08);
+  --particle-stroke: rgba(35, 31, 32, 0.15);
+  --shadow-card-mode: 0 20px 45px -15px rgba(35, 31, 32, 0.12);
+}
+
+body {
+  margin: 0;
+  background-color: var(--app-bg);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: var(--line-height-current);
+  letter-spacing: var(--letter-spacing-current);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,30 @@
+.product-logo-frame {
+  --product-logo-detail: var(--app-surface);
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  color: var(--product-logo-color);
+  border: 1px solid color-mix(in srgb, currentColor 24%, transparent);
+  border-radius: 50%;
+  background: linear-gradient(145deg,
+    color-mix(in srgb, currentColor 13%, var(--app-surface)),
+    color-mix(in srgb, currentColor 4%, var(--app-surface)));
+}
+
+.product-logo-frame[data-product="master"], .product-logo[data-product="master"] { --product-logo-color: #bd94f0; }
+.product-logo-frame[data-product="formula"], .product-logo[data-product="formula"] { --product-logo-color: #bfa3e5; }
+.product-logo-frame[data-product="cube"], .product-logo[data-product="cube"] { --product-logo-color: #72abff; }
+.product-logo-frame[data-product="accounting"], .product-logo[data-product="accounting"] { --product-logo-color: #f0a2b0; }
+
+html.light .product-logo-frame[data-product="master"], html.light .product-logo[data-product="master"] { --product-logo-color: #4e148c; }
+html.light .product-logo-frame[data-product="formula"], html.light .product-logo[data-product="formula"] { --product-logo-color: #654597; }
+html.light .product-logo-frame[data-product="cube"], html.light .product-logo[data-product="cube"] { --product-logo-color: #0468fa; }
+html.light .product-logo-frame[data-product="accounting"], html.light .product-logo[data-product="accounting"] { --product-logo-color: #b54f63; }
+
+.product-logo {
+  display: block;
+  overflow: visible;
+  color: var(--product-logo-color);
+  --product-logo-detail: var(--app-surface);
+}

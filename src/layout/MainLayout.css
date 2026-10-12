@@ -1,0 +1,157 @@
+﻿.main-layout {
+  isolation: isolate;
+}
+
+.main-layout__cloud {
+  position: fixed;
+  z-index: 100;
+  inset-inline: -8%;
+  bottom: 0;
+  height: 30vh;
+  pointer-events: none;
+  opacity: 0.94;
+  filter: blur(24px);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    #000 0%,
+    #000 35%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to top, #000 0%, #000 35%, transparent 100%);
+  background:
+    radial-gradient(
+      ellipse 45% 70% at 16% 100%,
+      color-mix(in srgb, var(--app-bg) 78%, var(--color-brand-purple) 22%),
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 55% 75% at 52% 100%,
+      color-mix(in srgb, var(--app-bg) 90%, var(--color-brand-blue) 10%),
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 45% 70% at 86% 100%,
+      color-mix(in srgb, var(--app-bg) 82%, var(--color-brand-violet) 18%),
+      transparent 80%
+    );
+  animation: layout-cloud-drift 18s ease-in-out infinite alternate;
+}
+
+html.light .main-layout__cloud {
+  opacity: 0.96;
+  background:
+    radial-gradient(
+      ellipse 45% 70% at 16% 100%,
+      color-mix(in srgb, var(--app-bg) 91%, white 9%),
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 55% 75% at 52% 100%,
+      color-mix(in srgb, var(--app-bg) 96%, white 4%),
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse 45% 70% at 86% 100%,
+      color-mix(in srgb, var(--app-bg) 90%, var(--color-brand-violet) 10%),
+      transparent 80%
+    );
+}
+
+.main-layout__cloud--top {
+  top: 0;
+  bottom: auto;
+  height: 500px;
+  z-index: 110;
+  opacity: 0;
+  filter: blur(12px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--app-bg) 94%, var(--color-brand-purple) 6%) 0%,
+      color-mix(in srgb, var(--app-bg) 84%, transparent) 40%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 58% 72% at 20% 0%,
+      color-mix(in srgb, var(--app-bg) 76%, var(--color-brand-purple) 24%),
+      transparent 78%
+    ),
+    radial-gradient(
+      ellipse 62% 72% at 76% 0%,
+      color-mix(in srgb, var(--app-bg) 84%, var(--color-brand-blue) 16%),
+      transparent 80%
+    );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0px,
+    #000 45px,
+    transparent 95px
+  );
+  mask-image: linear-gradient(to bottom, #000 0px, #000 45px, transparent 95px);
+  animation: cloud-reveal-scroll linear both;
+  animation-timeline: scroll(root);
+  animation-range: 50px 100px;
+}
+
+html.light .main-layout__cloud--top {
+  animation-name: cloud-reveal-scroll-light;
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--app-bg) 96%, white 4%) 0%,
+      color-mix(in srgb, var(--app-bg) 88%, transparent) 40%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 58% 72% at 20% 0%,
+      color-mix(in srgb, var(--app-bg) 92%, white 8%),
+      transparent 78%
+    ),
+    radial-gradient(
+      ellipse 62% 72% at 76% 0%,
+      color-mix(in srgb, var(--app-bg) 90%, var(--color-brand-violet) 10%),
+      transparent 80%
+    );
+}
+
+@keyframes cloud-reveal-scroll {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.92;
+  }
+}
+
+@keyframes cloud-reveal-scroll-light {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.96;
+  }
+}
+
+@keyframes layout-cloud-drift {
+  from {
+    transform: translate3d(-1.5%, 1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.5%, -1%, 0) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-layout__cloud {
+    animation: none;
+  }
+  .main-layout__cloud--top {
+    animation: none;
+    opacity: 0.92;
+  }
+  html.light .main-layout__cloud--top {
+    opacity: 0.96;
+  }
+}
